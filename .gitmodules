@@ -1,6 +1,7 @@
 [submodule "lib/pkp"]
 	path = lib/pkp
-	url = https://github.com/pkp/pkp-lib.git
+	url = https://github.com/josorno/pkp-lib.git
+	branch = ojs-stable-3_0_2
 [submodule "plugins/generic/customBlockManager"]
 	path = plugins/generic/customBlockManager
 	url = https://github.com/pkp/customBlockManager.git
@@ -21,8 +22,8 @@
 	url = https://github.com/pkp/ojs-user-guide
 [submodule "plugins/generic/lensGalley"]
 	path = plugins/generic/lensGalley
-	url = https://github.com/asmecher/lensGalley
-	branch = i1472-fix
+	url = https://github.com/josorno/lensGalley
+	branch = master
 [submodule "plugins/generic/googleAnalytics"]
 	path = plugins/generic/googleAnalytics
 	url = https://github.com/pkp/googleAnalytics.git
