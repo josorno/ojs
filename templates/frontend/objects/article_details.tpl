@@ -219,25 +219,14 @@
 					</div>
 				</div>
 			{/if}
-
 			{* Article Galleys *}
-			{if $primaryGalleys}
+			{assign var=galleys value=$article->getGalleys()}
+			{if $galleys}
 				<div class="item galleys">
 					<ul class="value galleys_links">
-						{foreach from=$primaryGalleys item=galley}
+						{foreach from=$galleys item=galley}
 							<li>
-								{include file="frontend/objects/galley_link.tpl" parent=$article galley=$galley purchaseFee=$currentJournal->getSetting('purchaseArticleFee') purchaseCurrency=$currentJournal->getSetting('currency')}
-							</li>
-						{/foreach}
-					</ul>
-				</div>
-			{/if}
-			{if $supplementaryGalleys}
-				<div class="item galleys">
-					<ul class="value supplementary_galleys_links">
-						{foreach from=$supplementaryGalleys item=galley}
-							<li>
-								{include file="frontend/objects/galley_link.tpl" parent=$article galley=$galley isSupplementary="1"}
+								{include file="frontend/objects/galley_link.tpl" parent=$article galley=$galley}
 							</li>
 						{/foreach}
 					</ul>

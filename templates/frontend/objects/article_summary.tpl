@@ -62,12 +62,12 @@
 	{if !$hideGalleys}
 		<ul class="galleys_links">
 			{foreach from=$article->getGalleys() item=galley}
-				{if $primaryGenreIds}
+				{*{if $primaryGenreIds}
 					{assign var="file" value=$galley->getFile()}
 					{if !$file || !in_array($file->getGenreId(), $primaryGenreIds)}
 						{php}continue;{/php}
 					{/if}
-				{/if}
+				{/if}*}
 				<li>
 					{assign var="hasArticleAccess" value=$hasAccess}
 					{if ($article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN)}

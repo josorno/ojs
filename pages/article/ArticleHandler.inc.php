@@ -116,6 +116,7 @@ class ArticleHandler extends Handler {
 			foreach ($galleys as $galley) {
 				$file = $galley->getFile();
 				if (!$file) {
+                                        $primaryGalleys[] = $galley;
 					continue;
 				}
 				if (in_array($file->getGenreId(), $primaryGenreIds)) {
@@ -354,7 +355,7 @@ class ArticleHandler extends Handler {
 							$this->issue = $issue;
 							$this->article = $publishedArticle;
 							return true;
-						} elseif ($paymentManager->purchaseArticleEnabled()) {
+						} else {
 							$queuedPayment = $paymentManager->createQueuedPayment($request, PAYMENT_TYPE_PURCHASE_ARTICLE, $user->getId(), $publishedArticle->getId(), $journal->getSetting('purchaseArticleFee'));
 							$paymentManager->queuePayment($queuedPayment);
 
